@@ -7,7 +7,11 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class CityInfoId implements Serializable{
-  @Column(name="city_name")
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3490132790806562288L;
+@Column(name="city_name")
   private String cityName;
   
   public String getCityName() {

@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.app.entities.CityInfo;
 
+@SuppressWarnings("deprecation")
 @Configuration
 @EnableTransactionManagement
 @EntityScan(basePackageClasses=CityInfo.class)
