@@ -20,6 +20,12 @@ import com.app.city.models.City;
 import com.app.city.services.CityRequestValidator;
 import com.app.city.services.CityService;
 
+/**
+ * @author asselvakumar
+ * 
+ *         Main controller for the service. Handles Add and search
+ *
+ */
 @RestController
 public class CityController {
 

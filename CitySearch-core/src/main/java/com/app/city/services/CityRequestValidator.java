@@ -15,7 +15,10 @@ import com.app.city.utils.CitySearchConstants;
 public class CityRequestValidator {
   private final Logger LOGGER = LoggerFactory.getLogger(CityRequestValidator.class);
 
-
+  /**
+   * @param city
+   * @param response Validates if at least one parameter is present in the input request
+   */
   public void validateAtleatOneParamPresence(City city, HttpServletResponse response) {
     LOGGER.info("100004;Validating the City add request");
     if (StringUtils.isBlank(city.getCityCountry()) || StringUtils.isBlank(city.getCityName())
