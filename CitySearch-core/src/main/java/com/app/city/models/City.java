@@ -1,4 +1,4 @@
-package com.app.models;
+package com.app.city.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

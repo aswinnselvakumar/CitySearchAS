@@ -1,4 +1,4 @@
-package com.app.entities;
+package com.app.city.entities;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;

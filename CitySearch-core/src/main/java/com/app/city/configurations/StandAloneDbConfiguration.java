@@ -1,4 +1,4 @@
-package com.app.configurations;
+package com.app.city.configurations;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.vendor.HibernateJpaSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.app.entities.CityInfo;
+import com.app.city.entities.CityInfo;
 
 @SuppressWarnings("deprecation")
 @Configuration

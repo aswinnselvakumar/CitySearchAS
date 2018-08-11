@@ -1,16 +1,17 @@
-package com.app.services;
+package com.app.city.services;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
-import com.app.exceptions.InvalidParametersException;
-import com.app.models.City;
-import com.app.utils.CitySearchConstants;
+import com.app.city.exceptions.InvalidParametersException;
+import com.app.city.models.City;
+import com.app.city.utils.CitySearchConstants;
 
-
+@Service
 public class CityRequestValidator {
   private final Logger LOGGER = LoggerFactory.getLogger(CityRequestValidator.class);
 

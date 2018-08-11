@@ -1,4 +1,4 @@
-package com.app.utils;
+package com.app.city.utils;
 
 public class CitySearchConstants {
   public static final String MANDATORY_PARAM_EMPTY="The parameter '%s' is mandatory";
