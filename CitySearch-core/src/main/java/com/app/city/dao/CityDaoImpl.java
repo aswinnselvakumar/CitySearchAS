@@ -1,4 +1,4 @@
-package com.app.dao;
+package com.app.city.dao;
 
 import javax.transaction.Transactional;
 
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.app.entities.CityInfo;
+import com.app.city.entities.CityInfo;
 @Repository
 @Transactional
 public class CityDaoImpl implements CityDaoInterface {
@@ -22,7 +22,6 @@ public class CityDaoImpl implements CityDaoInterface {
     return sessionFactory.getCurrentSession();
   }
 
-//  @Override
   public void addCity(CityInfo city) {
     LOGGER.info("0;Adding City details to DB");
     getSession().save(city);

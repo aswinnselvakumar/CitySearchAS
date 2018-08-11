@@ -5,10 +5,10 @@
 	<groupId>CitySearch-core</groupId>
 	<artifactId>CitySearch-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<name>CitySearch-core</name>
-	 <parent>
+	<parent>
 		<groupId>CitySearch-Parent</groupId>
 		<artifactId>CitySearch-Parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>

@@ -1,11 +1,14 @@
-package com.app.startup;
+package com.app.city;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
+/**
+ * Startup class for the application
+ */
 @SpringBootApplication
-@ComponentScan("com.app.configurations")
+@EnableAutoConfiguration
 public class CitySearchApplicationStartUp {
 	public static void main(String args[]){
 		SpringApplication.run(CitySearchApplicationStartUp.class, args);

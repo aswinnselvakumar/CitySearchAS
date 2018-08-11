@@ -1,4 +1,4 @@
-package com.app.exceptions;
+package com.app.city.exceptions;
 
 import javax.servlet.http.HttpServletResponse;
 
