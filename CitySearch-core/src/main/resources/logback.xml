@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<property resource="application.properties" />
+	<!-- Appender for PaperTrail -->
+	<appender name="papertrail" class="ch.qos.logback.classic.net.SyslogAppender">
+		<syslogHost>${papertrail.host}</syslogHost>
+		<port>${papertrail.port}</port>
+		<facility>USER</facility>
+		<suffixPattern>[%d{yyyy-MM-dd HH:mm:ss} ${application.name}:%level,%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%logger] %msg
+		</suffixPattern>
+	</appender>
+	
+	<!-- Console Appender -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				[%d{yyyy-MM-dd HH:mm:ss} ${application.name}:%level,%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%logger] %msg%n
+			</Pattern>
+		</encoder>
+	</appender>
+	
+	<!-- Rolling File Appender -->
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>citySearch.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>citySearch_%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>5MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				[%d{yyyy-MM-dd HH:mm:ss} ${application.name}:%level,%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%logger] %msg%n
+			</Pattern>
+		</encoder>
+	</appender>
+	
+	<!-- Root Level Definition -->
+	<root level= "${logging.level.root}">
+		<appender-ref ref="papertrail" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+</configuration>
